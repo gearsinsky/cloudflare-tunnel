@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  cloudflared:
+    build: .
+    container_name: cloudflared-jenkins
+    restart: always
+    volumes:
+      - ./config.yml:/etc/cloudflared/config.yml
+      - ./jenkins-tunnel.json:/etc/cloudflared/jenkins-tunnel.json
+    command: tunnel run
+
+##cloudflared tunnel login
+##tls move to ~/.cloudflared/cert.pem
+##cloudflared tunnel create jenkins-tunnel
+##mv jenkins-tunnel to ~/.cloudflared/xxxxxxxx-jenkins-tunnel.json(for docker)
+##cloudflared tunnel route dns jenkins-tunnel jenkins.rising-shop-dg.com
+##auto add DNS A record
