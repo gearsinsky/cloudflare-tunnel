@@ -8,7 +8,8 @@
 建立tunnel生成json憑證
 ```
 ## COPY TLS json
-```你要把它複製到 cloudflared/jenkins-tunnel.json（給 Docker 用）
+```
+你要把它複製到 cloudflared/jenkins-tunnel.json（給 Docker 用）
 ```
 ## 綁定DNS
 ```cloudflared tunnel route dns``` ```jenkins-tunnel jenkins.rising-shop-dg.com
