@@ -4,4 +4,7 @@ credentials-file: /etc/cloudflared/jenkins-tunnel.json
 ingress:
   - hostname: jenkins.rising-shop-dg.com
     service: http://host.docker.internal:8080
+    # originRequest:
+    #   access:
+    #     required: true
   - service: http_status:404
