@@ -28,3 +28,21 @@ curl -I http://{{config上面的hostname}}
 ```
 
 ## 測試
+```
+cloudflared access ssh --hostname your_domain_name
+```
+認證用，會跳出ui，如果沒有copy url也會有一樣貼上也可以(ssh tunnel，https tunnel目前直接在ui執行即可)
+
+## config(ssh tunnel)
+可以在~/.ssh/config
+```
+Host mac-via-cf 
+  HostName your_domain_name
+  ProxyCommand /opt/homebrew/bin/cloudflared access ssh --hostname %h
+  User xxx
+```
+接下來輸入
+```
+ssh mac-via-cf
+```
+就可以登入了
