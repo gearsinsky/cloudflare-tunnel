@@ -4,6 +4,8 @@ credentials-file: /etc/cloudflared/jenkins-tunnel.json
 ingress:
   - hostname: your_domain_name
     service: http://host.docker.internal:8080
+  - hostname: mac.rising-shop-dg.com
+    service: ssh://host.docker.internal:22
     # originRequest:
     #   access:
     #     required: true
